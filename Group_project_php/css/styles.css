@@ -1,0 +1,235 @@
+/***************************************************************
+Homogénéité des "boîtes" HTML
+***************************************************************/
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+/***************************************************************
+Taille de police "responsive"
+***************************************************************/
+
+html {
+    font-size: 0.625em;
+    font-size: calc(1em * 0.625);
+    /*pour résoudre des bugs IE*/
+}
+
+body {
+    font-size: 1.6em;
+    /*équivalent à 16px selon le viewport*/
+}
+
+/***************************************************************
+Styles généraux
+***************************************************************/
+
+body, nav, section, article, footer {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+aside{
+    text-align: left;
+    border-right: 1px solid #000;
+}
+
+a {
+    color: inherit;
+    transition: .4s;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: rgb(0, 234, 255);
+}
+
+/***************************************************************
+        les choses mutualiser
+***************************************************************/
+
+.btn_send_kev{
+    border: none;
+    border-radius: 3px;
+    background: #0097C9;
+    color: #fff;
+}
+
+/***************************************************************
+HEADER
+***************************************************************/
+#headerButton{
+    display: flex;
+    justify-content: end;
+}
+#headerButton .button {
+    border: 1px solid #000;
+    border-radius: 10px;
+    background: #0097C9;
+    padding: 10px;
+    margin: 10px;
+}
+
+#hautPage{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#formLogin{
+    text-align: center;
+}
+
+
+/***************************************************************
+NAVBAR
+***************************************************************/
+.navbar{
+    padding: 0;
+    margin: 50px 0;
+}
+
+nav ul{
+    width: 100vw;
+    background: #0097C9;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    padding: 10px 50px;
+    color: #000;
+}
+
+
+/***************************************************************
+Sidebars
+***************************************************************/
+#sidebar, #article{
+    display: flex;
+}
+aside.session ul, aside.article{
+    width: 250px;
+}
+aside.session li, aside.article{
+    margin: 40px;
+}
+/***************************************************************
+SECTIONS
+***************************************************************/
+h2{
+    font-size: 3em;
+    margin: 50px auto;
+}
+
+section{
+    margin: 50px auto;
+}
+
+h3{
+    font-size: 2em;
+}
+
+/***************************************************************
+SECTION ARTICLES
+***************************************************************/
+main.article{
+    margin: 0 100px;
+}
+
+/***************************************************************
+*                                                              *
+*               ACCUEIL                                *
+*                                                              *
+***************************************************************/
+#lab_search{
+    
+}
+
+
+
+.div_mon_compte{
+    margin: auto;
+}
+
+/***************************************************************
+*                                                              *
+*               PAGE DE TCHAT                                  *
+*                                                              *
+***************************************************************/
+#div_messages{
+    height: 400px;
+    overflow: scroll;
+    border: 3px ridge #0097C9;
+    border-radius: 3px;
+    background: #FAFAF0;
+}
+
+.msg_send{
+    margin:auto; margin-top:30px; padding:8px; width: 150px; background:green; color:white; border-radius: 10px;
+}
+
+.msg_no_send{
+    margin:auto; margin-top:30px; padding:8px; width: 150px; background:red; color:white; border-radius: 10px;}
+
+.td_date{
+    color: #0097C9;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.td_user{
+    color: #0097C9;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.td_post{
+}
+
+#id_message{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 2px outset grey;
+    border-radius: 3px;
+    box-shadow: 0 3px 10px lightblue;
+    background: #FCFCF7;
+}
+
+
+
+
+
+
+
+/***************************************************************
+FOOTER
+***************************************************************/
+footer {
+    background: #0097C9;
+    padding: 30px;
+    margin-top: 50px;
+}
+
+
+/***************************************************************
+MEDIA QUERIES
+***************************************************************/
+
+/*** Tablettes ***/
+
+/*** PC ***/
+
+
+
+
+
