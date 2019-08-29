@@ -1,0 +1,33 @@
+GUIDE SCRIPT
+
+On crée une variable booléenne qui permet de stocker si oui ou non il y a des erreurs
+
+    • Quand on clique sur le bouton valider du formulaire :
+
+        ? On empêche l’envoi du formulaire
+
+        ? Si le choix du film est vide
+            ? on ajoute la classe invalide
+            ? il y a une erreur
+        ? sinon
+            ? on ajoute la classe valide
+
+        ? Si les raisons du choix est inférieur à 15
+            ? on ajoute la classe invalide
+            ? il y a une erreur
+        ? sinon
+            ? on ajoute la classe valide
+
+        ? S’il n’y a pas d’erreurs
+            ? on efface le formulaire et on affiche une boite d’alerte : contenu envoyé
+
+    • Quand on modifie le choix du film
+        ? on supprime les classes valide et invalide
+        ? il n’y a pas d’erreurs
+
+    • Quand on modifie les raisons du choix du film
+        ? on supprime les classes valide et invalide
+        ? il n’y a pas d’erreurs
+
+
+

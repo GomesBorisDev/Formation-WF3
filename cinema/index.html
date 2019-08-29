@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+        <title>Films</title>
+        
+        <meta name="description" content="Phrase unique et pertinente qui décrit le contenu de la page web.">
+
+        <!--Ordre des feuilles de style : polices web et bibliothèques (normalize) et EN DERNIER : votre feuille de style-->
+        <!--Bootstrap-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!--Font Awesome-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+        <!--Google Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet"> 
+        <!--Style perso-->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    </head>
+    <body>
+        <header>
+            <div id="top-bar">
+                <h1 class="container">Cinéma WF3</h1>
+            </div> 
+            
+            <div id="bandeau">
+                <h2 class="container">Notre programmation de la semaine</h2>
+            </div>      
+        </header>
+        
+        
+        
+        <div id="wrapper-main">
+            <main class="container">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div id="diaporama">
+                            <div class="affiches-films">
+                                <div id="sliderAffichesFilms" class="carousel slide" data-ride="carousel">
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#sliderAffichesFilms" data-slide-to="0" class="active"></li>
+                                        <li data-target="#sliderAffichesFilms" data-slide-to="1"></li>
+                                        <li data-target="#sliderAffichesFilms" data-slide-to="2"></li>
+                                        <li data-target="#sliderAffichesFilms" data-slide-to="3"></li>
+                                        <li data-target="#sliderAffichesFilms" data-slide-to="4"></li>
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img src="affiches/district9.jpg" class="d-block w-100" alt="...">
+                                            <div class="carousel-caption d-none d-md-block">
+                                                <h3>District 9</h3>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="affiches/avatar.jpg" class="d-block w-100" alt="...">
+                                            <div class="carousel-caption d-none d-md-block">
+                                                <h3>Avatar</h3>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="affiches/priest.jpg" class="d-block w-100" alt="...">
+                                            <div class="carousel-caption d-none d-md-block">
+                                                <h3>Priest</h3>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="affiches/retourRoi.jpg" class="d-block w-100" alt="...">
+                                            <div class="carousel-caption d-none d-md-block">
+                                                <h3>Le Retour du Roi</h3>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="affiches/underworld.jpg" class="d-block w-100" alt="...">
+                                            <div class="carousel-caption d-none d-md-block">
+                                                <h3>Underworld</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a class="carousel-control-prev" href="#sliderAffichesFilms" role="button" data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Préc.</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#sliderAffichesFilms" role="button" data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Suiv.</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <form id="choisirFilm">
+                            <div class="form-group">
+                                <label for="choixFilm">Sélectionnez un film</label>
+                                <select id="choixFilm" class="custom-select">
+                                    <option value="">Choisissez</option>
+                                    <option value="district9">District 9</option>
+                                    <option value="avatar">Avatar</option>
+                                    <option value="priest">Priest</option>
+                                    <option value="retourduroi">Le Retour du Roi</option>
+                                    <option value="underworld">Underworld</option>
+                                </select>
+                                <div class="invalid-feedback">Vous devez impérativement choisir un film</div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="raisonsChoix">Raisons de votre choix</label>
+                                <textarea class="form-control" id="raisonsChoix" placeholder="Donnez les raisons de votre choix" rows="10"></textarea>
+                                <div class="invalid-feedback">
+                                    Votre texte doit contenir au moins 15 caractères.
+                                </div>
+                            </div>
+                            <input class="btn btn-success" type="submit" value="Valider">
+                        </form>
+                    </div>
+                </div>
+            </main>
+            <aside>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <i class="fas fa-film fa-10x"></i>
+                        </div>
+                        <div class="col-sm-9">
+                            <h3>Les films de la semaine</h3>
+                            <p>Illud autem non dubitatur quod cum esset aliquando virtutum omnium domicilium Roma, ingenuos advenas plerique nobilium, ut Homerici bacarum suavitate Lotophagi, humanitatis multiformibus officiis retentabant.</p>
+                            <p>Illud autem non dubitatur quod cum esset aliquando virtutum omnium domicilium Roma, ingenuos advenas plerique nobilium, ut Homerici bacarum suavitate Lotophagi, humanitatis multiformibus officiis retentabant.</p>
+                            <p>Illud autem non dubitatur quod cum esset aliquando virtutum omnium domicilium Roma, ingenuos advenas plerique nobilium, ut Homerici bacarum suavitate Lotophagi, humanitatis multiformibus officiis retentabant.</p>
+                            <p>Illud autem non dubitatur quod cum esset aliquando virtutum omnium domicilium Roma, ingenuos advenas plerique nobilium, ut Homerici bacarum suavitate Lotophagi, humanitatis multiformibus officiis retentabant.</p>
+
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+        
+        
+        
+        <footer>
+            <p id="copyright">&copy Webforce 3</p>
+        </footer>
+
+        <!-- JAVASCRIPT A PARTIR D'ICI - NE PAS METTRE DE CODE HTML A PARTIR D'ICI - le code reste au-dessus -->
+        <!--Bootstrap + jQuery-->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <!--Script Perso-->
+        <script src="js/script.js"></script>
+    </body>
+</html>
