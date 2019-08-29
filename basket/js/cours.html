@@ -1,0 +1,23 @@
+<div data-stock="10" data-item-name="Mon produit" data-item-price-unit="49"></div>
+
+
+
+
+
+<script type="text/javascript">
+
+$('div').data('stock'); // Récupère la valeur de data-stock 
+$('div').attr('data-stock'); // Récupère la valeur de data-stock (similaire a la ligne précédente)
+
+
+$('div').data('itemName');
+$('div').data('itemPriceUnit');
+
+
+$('div').data('itemPriceUnit', 70); // Redefinit la valeur
+
+
+
+
+$('[data-item-price-unit="49"]') // Pour récupérer tous les data-item-price="49"
+</script>

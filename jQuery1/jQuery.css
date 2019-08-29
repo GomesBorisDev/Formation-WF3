@@ -1,0 +1,50 @@
+/* {
+	margin: 0;
+}*/
+
+#fondu1, #fondu2, #fondu3, #fondu4 {
+	height: 150px;
+	width: 300px;
+	padding-bottom: 1em;
+}
+
+#fondu1 {
+	background: red;
+}
+
+#fondu2 {
+	background: green;
+}
+
+#fondu3 {
+	background: blue;
+}
+
+#fondu4 {
+	background: orange;
+	/*opacity: 0.2;*/
+	display: none;
+}
+
+
+#bandeau, #panneau {
+	padding: 1em;
+	text-align: center;
+}
+
+#bandeau {
+	background: silver;
+}
+
+#panneau {
+	background: gainsboro;
+	display: none;
+}
+
+#rectangleRouge {
+	height: 100px;
+	width: 200px;
+	background: red;
+	position: relative;
+	margin-bottom: 3em;
+}

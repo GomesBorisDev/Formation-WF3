@@ -1,0 +1,102 @@
+/*--- MINI RESET ---*/
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-decoration: none;
+}
+
+
+/*--- BASE ---*/
+
+html,
+body {
+    background: #333;
+    color: #CCC;
+    font-family: Verdana,sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: normal;
+}
+
+a {
+    color: #FFF;
+    transition: all 0.5s ease;
+}
+
+a:hover {
+    color: #ffe789;
+}
+
+/* STYLES */
+
+#wrapper {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.titleContent {
+    text-align: center;
+    padding: 2em 0.5em;
+    font-variant: small-caps;
+}
+
+.centrer {
+    text-align: center;
+    margin: auto;
+    width: 100%;
+}
+
+
+
+.bigTexte {
+    font-size: 1.4em;
+}
+
+.btValidation {
+    text-align: center;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+.btStyle {
+    padding: 1em;
+    border-radius: 1em;
+    background: #777;
+    width: 150px;
+    text-align: center;
+    margin: 2em auto;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.btStyle:hover {
+    background: #25618d;
+}
+
+.btStyle:hover a {
+    color: #ffe789;
+}
+
+.btOuiNon {
+    width: 50%;
+    float: left;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.tabCentre {
+    width:80%;
+    margin: 0 auto;
+}
+
+.tabCentre td {
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #CCC;
+}
+
+.clear {
+    clear: both;
+}

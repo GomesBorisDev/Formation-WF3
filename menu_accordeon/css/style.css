@@ -1,0 +1,21 @@
+body {
+    text-align: center;
+    margin:auto;
+    width: 60%;
+}
+
+
+#bandeau1, #bandeau2, #bandeau3, #bandeau4 {
+    background-color: #4db8ff;
+    padding: 20px;
+    border-radius: 10%;
+    border: solid 2px black;
+}
+
+#panneau1, #panneau2, #panneau3, #panneau4 {
+    display: none;
+    background-color: lightgrey;
+    padding: 25px;
+    text-align: left;
+    
+}
