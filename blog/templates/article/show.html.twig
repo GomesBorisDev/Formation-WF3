@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un article de blog{% endblock %}
+
+{% block body %}
+
+<h1 class="text-center mt-5 mb-4">Ajouter un article</h1>
+
+
+<div class="row justify-content-center">
+	
+	<table class="table table-hover">
+		<tr>
+			<th scope="col">Titre</th>
+			<th scope="col">Categorie</th>
+			<th scope="col">Contenu</th>
+			<th scope="col">Photo</th>
+		</tr>
+		<tr>
+			<td>{{article.getTitle()}}</td>
+			<td>{{article.getCategory()}}</td>
+			<td>{{article.getContent()}}</td>
+			<td><img width="100" class="img-thumbnail"src="/{{article.getPicture()}}"></td>
+		</tr>
+	</table>
+
+</div>
+
+{% endblock %}

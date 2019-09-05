@@ -1,0 +1,58 @@
+index:
+    path: /
+    controller: App\Controller\DefaultController::index
+
+# racine projet SF :  http://localhost/blog/public/
+# http://localhost/blog/public/add-new-vehicle
+
+# nom_de_route_doit_etre_unique
+#  path: /url-de-ma-page
+#  controller: LaMethodeQuiAppelleMaPage
+
+# add_car:
+#    path: /add-new-vehicle # http://localhost/blog/public/add-new-vehicle
+#    controller: App\Controller\DefaultController::addCar
+
+###ARTICLES
+
+add_article:
+    path: /add-new-article
+    controller: App\Controller\ArticleController::addArticle
+
+edit_article:
+    path: /edit-article/{id} 
+    controller: App\Controller\ArticleController::editArticle
+    requirements: 
+      id: '\d+' #veux dire que cela ne prendra que des chiffres
+
+list_articles:
+    path: /list-articles
+    controller: App\Controller\ArticleController:listArticles 
+
+show_article:
+    path: /show-article/{id}
+    controller: App\Controller\ArticleController:showArticle
+    requirements: 
+      id: '\d+' 
+
+###USERS
+
+add_user:
+    path: /add-new-user
+    controller: App\Controller\UsersController::addUser
+
+# edit_user:
+#     path: /edit-user/{id} 
+#     controller: App\Controller\userController::editUser
+#     requirements: 
+#       id: '\d+' #veux dire que cela ne prendra que des chiffres
+
+# list_users:
+#     path: /list-users
+#     controller: App\Controller\userController:listUsers 
+
+# show_user:
+#     path: /show-user/{id}
+#     controller: App\Controller\userController:showUser
+#     requirements: 
+#       id: '\d+' 

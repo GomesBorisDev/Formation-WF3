@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un article de blog{% endblock %}
+
+{% block body %}
+
+<h1 class="text-center mt-5 mb-4">Create Account</h1>
+
+
+<div class="row justify-content-center">
+	<div class="col-md-6">
+
+		<form method="post">
+			
+			<div>
+				<label for="user_name">Username</label>
+				<input type="text" name="username_input" id="user_name" required placeholder="New username">
+			</div>
+			<div>
+				<label for="email">Email</label>
+				<input type="email" name="email_input" id="email" required placeholder="Email">
+			</div>
+			<div>
+				<label for="pwd">Password</label>
+				<input type="password" name="pwd_input" id="pwd" required placeholder="8 caracters min, 1 number & 1 capital letter">
+			</div>
+			<div>
+				<label for="pwd_confirm">Password confirmation</label>
+				<input type="password" name="pwd_confirm_input" id="pwd_confirm" required placeholder="Needs to be identical to password">
+			</div>
+			<div>
+				<input type="submit" value="REGISTER !">
+			</div>
+
+		</form>
+
+	</div>
+
+</div>
+
+{% endblock %}

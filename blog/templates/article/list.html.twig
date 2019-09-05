@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un article de blog{% endblock %}
+
+{% block body %}
+
+<h1 class="text-center mt-5 mb-4">Liste des articles</h1>
+
+
+<div class="row justify-content-center">
+	<table class="table table-hover">
+
+		<tr>
+			<th scope="col">Titre</th>
+			<th scope="col">Detail</th>
+			<th scope="col">Modifier</th>
+		</tr>
+
+		{% for article in articles %}
+		<tr>
+			
+			<td scope="col">{{article.getTitle()}}</td>
+			<td><a href="http://localhost:8000/show-article/{{article.getId}}">Detail</a></td>
+			<td><a href="http://localhost:8000/edit-article/{{article.getId}}">Modifier</a></td>
+			
+		</tr>
+		{% endfor %}
+		
+	</table>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un article de blog{% endblock %}
+
+{% block body %}
+
+<h1 class="text-center mt-5 mb-4">Editer un article</h1>
+
+<!-- equivalent de mon !empty() -->
+		{% if errors is not empty %}
+			<!-- {{errors|raw}} permet d'afficher la variable en "brut". Comme j'ai du HTML (implode(<br>)..) il faut que j'utilise raw pour afficher celles-ci, sinon le <br> sera affiché comme du texte  -->
+			<div class="alert alert-danger">{{errors|raw}}</div> 
+		{% elseif success == true %}
+			<div class="alert alert-success">BRAVO !</div>
+		{% endif %}
+
+
+<div class="row justify-content-center">
+	<div class="col-md-6">
+
+		<form method="post" enctype="multipart/form-data">
+			<div class="form-group row">
+				<label for="title" class="col-md-2 col-form-label">Titre</label>
+				<div class="col-md-10">
+					<input type="text" name="title" id="title" class="form-control" value="{{article.getTitle()}}">
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label for="category" class="col-md-2 col-form-label">Catégorie</label>
+				<div class="col-md-10">
+					<select name="category" id="category" class="form-control">
+						
+						<option value="{{article.getCategory}}" selected>{{categories[article.getCategory()]}}</option>
+						
+						<!-- équivalent de foreach -->
+						{% for key, category in categories %}
+							<option value="{{key}}">{{category}}</option>
+						{% endfor %};
+					</select>
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label for="content" class="col-md-2 col-form-label">Contenu</label>
+				<div class="col-md-10">
+					<textarea type="text" name="content" id="content" class="form-control">{{article.getContent()}}</textarea>
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label for="picture">Photo</label>
+				<input type="file" name="picture" id="picture" accept="image/*">
+			</div>
+			
+			<div class="form-group row">
+				<div class="col-md-10 offset-md-2">
+					<button type="submit" class="btn btn-primary">Valider</button>
+				</div>
+			</div>
+		</form>
+
+	</div>
+
+</div>
+
+{% endblock %}
