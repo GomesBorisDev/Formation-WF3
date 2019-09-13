@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            {% block title %}Shoes Wall
+            {% endblock %}
+        </title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/styles.css"> {% block stylesheets %}{% endblock %}
+        </head>
+
+        <body>
+            <header class="container">
+                <a class="nav-link" href="{{ path ('homepage') }}"><img src="/img/South-West-Store-Logo.png" alt="Logo"></a>
+
+                <h1>Bienvenue chez South-West-Store</h1>
+            </header>
+
+            <nav id="navbar" class="navbar">
+                <div class="left">
+
+                    <a class="nav-link" href="{{ path ('show_products') }}">Shop</a>
+
+                    {% if not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                        <a class="nav-link" href="{{ path('app_register') }}">S'inscrire</a>
+
+                        <a class="nav-link" href="{{ path('app_login') }}">Connexion</a>
+
+                    {% else %}
+
+                        {% if is_granted(expression('"ROLE_ADMIN" in roles or (not is_anonymous() and not "ROLE_USER" in roles)')) %}
+                            <div class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Admin</a>
+
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item nav-link" href="{{ path('add_product') }}">Ajouter</a>
+
+                                    <a class="dropdown-item nav-link" href="{{ path('modify_product') }}">Modifier</a>
+
+                                    <a class="dropdown-item nav-link" href="{{ path('admin_orders') }}">Commandes</a>
+
+                                </div>
+                            </div>
+
+                        {% else %}
+                            <div class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ app.user.firstName }}</a>
+
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item nav-link" href="{{ path('user_session') }}">Profil</a>
+
+                                    <a class="dropdown-item nav-link" href="{{ path('user_orders') }}">Commandes</a>
+                                </div>
+                            </div>
+
+                        {% endif %}
+                    {% endif %}
+                </div>
+                <div class="right">
+                    {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+
+                        <a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
+
+                    {% endif %}
+
+
+                    <a class="nav-link" href="{{path('cart_details')}}">Panier()</a>
+                    
+                </div>
+
+
+            </nav>
+
+            {% block body %}{% endblock %}
+
+            <footer>
+                <p class="text-center">&copy; Copyright 2019 - Web Force 3 - Ne pas reproduire |
+                    <a href="{{ path('mentions') }}">Mentions légales</a>
+                    |
+                    <a href="{{ path('cgv') }}">CGV</a>
+                    |
+                    <a href="{{ path('contact') }}">Nous contacter</a>
+                </p>
+
+            </footer>
+            <!-- Jquery -->
+            <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+            <!-- Bootstrap-->
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+            <!-- Mon script-->
+            <script src="public/js/main.js"></script>
+
+            {% block javascripts %}{% endblock %}
+
+        </body>
+    </html>

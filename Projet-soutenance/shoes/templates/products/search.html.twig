@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% if error is not empty %}
+        <div class="alert alert-danger">{{error|raw}}</div>
+    {% endif %}
+    <main id="search_products">
+        <form action="{{ current_url }}" method="get">
+            {% for keyBrand, valueBrand in brands %}
+                <ul>
+                    <li class="text-decoration-none">
+                        <a href="{{current_url}}?brand={{keyBrand}} " title=" {{ valueBrand }} " class=" btn btn-secondary">{{ valueBrand }}</a>
+                    </li>
+                </ul>
+            {% endfor %}
+            <ul class="row">
+                {% for keySize, valueSize in sizes %}
+                    <li class="col-4 text-decoration-none">
+                        <a href="{{current_url}}?brand={{selectedBrand}}&size={{valueSize}}" title=" {{ valueSize }} " class=" btn btn-secondary">{{ valueSize }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+            <ul class="row">
+                {% for keyColor, valueColor in colors %}
+                    <li class="col-3 text-decoration-none">
+                        <a href="{{current_url}}?brand={{selectedBrand}}&size={{selectedSize}}&color={{keyColor}}" title=" {{ valueColor }} " class=" btn btn-secondary" style="{{ valueColor }}"></a>
+                    </li>
+                {% endfor %}
+            </ul>
+            <ul>
+                <li><ahref="{{current_url}}?brand={{selectedBrand}}&size={{selectedSize}}&color={{selectedColor}}&pricemax=500" title="" class=" btn btn-secondary">Moins de 500€</a></li>
+                <li><ahref="{{current_url}}?brand={{selectedBrand}}&size={{selectedSize}}&color={{selectedColor}}&pricemin=500&pricemax=1000" title="" class=" btn btn-secondary">500€ à 1000€</a></li>
+                <li><ahref="{{current_url}}?brand={{selectedBrand}}&size={{selectedSize}}&color={{selectedColor}}&pricemin=1000" title="" class=" btn btn-secondary">Plus de 1000€</a></li>
+            </ul>
+
+
+        </form>
+
+
+        {% if searchResult is not empty %}
+            {% for pKey, pValue in searchResult %}
+                <h4 style="color:red">
+                    {{ pValue.getId() }}
+                    {{ pValue.getModel() }}
+                    {{ pValue.getPrice() }}
+                    {{ pValue.getColor() }}
+                    {{ pValue.getShoeSize() }}
+                </h4>
+            {% endfor %}
+        {% endif %}
+
+
+    {% endblock %}

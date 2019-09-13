@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un article
+{% endblock %}
+
+{% block body %}
+    <main id="add_product" class="container">
+
+        <h2 class="text-center mt-5 mb-4">Ajouter une paire</h2>
+
+        {% if errors is not empty %}
+            <div class="alert alert-danger">{{errors|raw}}</div>
+        {% elseif success == true %}
+            <div class="alert alert-success">Votre article a bien été envoyé</div>
+        {% endif %}
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+
+                <form method="post" enctype="multipart/form-data">
+
+                    <div class="form-group">
+                        <label for="brand" class="col-md-2 col-form-label">Marque</label>
+                        <select name="brand" id="brand" class="form-control">
+                            <option selected>-- Sélectionnez une marque --</option>
+                            {% for key, brand in brands %}
+                                <option value="{{key}}" {% if brandValue == key %} {%endif%}>{{brand}}</option>
+                            {% endfor %};
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="model" class="col-md-2 col-form-label">Modèle</label>
+                        <input type="text" name="model" id="model" class="form-control" value="{{modelValue}}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sku" class="col-md-2 col-form-label">SKU</label>
+                        <input type="text" name="sku" id="sku" class="form-control" value="{{skuValue}}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="size" class="col-md-2 col-form-label">Taille</label>
+                        <select name="size" id="size" class="form-control">
+                            <option selected>-- Sélectionnez votre taille --</option>
+                            {% for key, size in sizes %}
+                                <option value="{{size}}" {% if sizeValue == key %} {%endif%}>{{size}}</option>
+                            {% endfor %};
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="color" class="col-md-2 col-form-label">Couleur</label>
+                        <select name="color" id="color" class="form-control">
+                            <option selected>-- Sélectionnez la couleur --</option>
+                            {% for key, color in colors %}
+                                <option value="{{key}}" {% if colorValue == key %} {%endif%} style="{{ color }}">{{key}}</option>
+                            {% endfor %};
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="price" class="col-md-2 col-form-label">Prix</label>
+                        <input type="text" name="price" id="price" class="form-control" value="{{priceValue}}">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3" for="picture1">Photo 1 :</label>
+                        <input class="col-md-9" type="file" name="picture1" id="picture1" accept="image/*">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3" for="picture2">Photo 2 :</label>
+                        <input class="col-md-9" type="file" name="picture2" id="picture2" accept="image/*">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3" for="picture3">Photo 3 :</label>
+                        <input class="col-md-9" type="file" name="picture3" id="picture3" accept="image/*">
+                    </div>
+
+                        <button type="submit" class="btn btn-lg btn-primary">Ajouter la paire</button>
+                
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+{% endblock %}

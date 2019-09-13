@@ -1,0 +1,390 @@
+/***************************************************************
+Homogénéité des "boîtes" HTML
+***************************************************************/
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+/***************************************************************
+Styles généraux
+***************************************************************/
+h1 {
+    text-align: center;
+    padding: 20px 0;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    color: #FFF;
+    text-decoration: none;
+}
+
+/***************************************************************
+HEADER
+***************************************************************/
+header a {
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.4em;
+}
+
+/***************************************************************
+NAVBAR
+***************************************************************/
+
+nav {
+    padding: 20px 0 !important;
+    display: flex;
+    justify-content: space-between;
+    background: #CF1717;
+}
+
+nav .left,
+nav .right {
+    display: flex;
+}
+
+/***************************************************************
+PAGE ACCUEIL (#home)
+***************************************************************/
+
+
+/***************************************************************
+PAGE SHOP( #show_products)
+***************************************************************/
+
+#show_products {
+    margin-top: 50px;
+}
+
+#show_products .card-body {
+    height: 460px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/***************************************************************
+PAGE RECHERCHE PRODUIT (#search_products)
+***************************************************************/
+
+
+
+/***************************************************************
+PAGE DETAIL PRODUIT (#product_detail)
+***************************************************************/
+
+#product_detail {
+    margin: 50px auto;
+}
+
+#product_detail .card {
+    padding: 10px;
+}
+
+#product_detail div.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#product_detail .carousel-indicators li {
+    background-color: #000;
+    margin-bottom: -20px;
+}
+
+#product_detail .prev-icon i,
+#product_detail .next-icon i {
+    color: #000;
+}
+/***************************************************************
+PAGE PANIER (#cart_details)
+***************************************************************/
+
+#cart_details button{
+    display: flex;
+    justify-content: center;
+}
+
+
+/***************************************************************
+PAGE SESSION INSCRIPTION (#user_register)
+***************************************************************/
+
+#user_register h2 {
+    text-align: center;
+    margin: 80px auto 50px auto;
+}
+
+#user_register form,
+#user_register p {
+    margin: 25px auto;
+}
+
+#user_register form {
+    margin: 50px auto;
+}
+
+#user_register p.bouton {
+    text-align: center;
+    margin: 50px auto;
+}
+
+/***************************************************************
+PAGE SESSION LOGIN (#login)
+***************************************************************/
+
+#login {
+    text-align: center;
+    margin: 80px auto;
+}
+
+#login form {
+    margin: auto;
+}
+
+#login h2 {
+    margin: 80px auto 50px auto;
+}
+
+#login .boutons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 30px auto;
+}
+
+#login .oubli_mdp {
+    margin: 30px auto;
+}
+
+#login a{
+    color: #000;
+}
+
+#login a:hover{
+    color: #CF1717;
+}
+
+/***************************************************************
+PAGE SESSION MOT DE PASSE OUBLIE (#forgot_pwd)
+***************************************************************/
+
+#forgot_pwd {
+    text-align: center;
+}
+
+#forgot_pwd form,
+#forgot_pwd p {
+    margin: auto;
+}
+
+#forgot_pwd h2 {
+    margin: 80px auto 50px auto;
+}
+
+#forgot_pwd button {
+    margin: 30px auto;
+}
+
+/***************************************************************
+PAGE SESSION RESET PASSWORD (#reset_pwd)
+***************************************************************/
+
+#reset_pwd {
+    text-align: center;
+}
+
+#reset_pwd form,
+#reset_pwd p {
+    margin: auto;
+}
+
+#reset_pwd h2 {
+    margin: 80px auto 50px auto;
+}
+
+#reset_pwd button {
+    margin: 30px auto;
+}
+
+/***************************************************************
+PAGE SESSION USER (#user_home)
+***************************************************************/
+
+#user_home h2 {
+    text-align: center;
+    margin: 50px auto;
+}
+
+
+/***************************************************************
+PAGE ORDERS USER (#user_orders)
+***************************************************************/
+#user_orders {
+    margin: 50px auto;
+}
+
+#user_orders h2 {
+    text-align: center;
+    margin: 50px auto;
+}
+
+#user_orders table th,
+#user_orders table tr td {
+    text-align: center;
+    border: 1px solid #000;
+    padding: 10px;
+}
+
+#user_orders table {
+    margin: auto;
+}
+
+/***************************************************************
+PAGE SESSION ADMIN ADD ARTICLE (#add_product)
+***************************************************************/
+
+#add_product button{
+    display: flex;
+    justify-content: center;
+    margin: 50px auto;
+}
+
+/***************************************************************
+PAGE SESSION ADMIN DELETE ARTICLE (#delete_article)
+***************************************************************/
+
+/***************************************************************
+PAGE SESSION ADMIN ORDERS (#admin_orders)
+***************************************************************/
+
+#admin_orders {
+    margin: 50px auto;
+}
+
+#admin_orders h2 {
+    text-align: center;
+    margin: 50px auto;
+}
+
+#admin_orders table th,
+#admin_orders table tr td {
+    text-align: center;
+    border: 1px solid #000;
+    padding: 10px;
+}
+
+#admin_orders table {
+    margin: auto;
+}
+
+/***************************************************************
+PAGE NOUS CONTACTER (#contact)
+***************************************************************/
+
+#contact h2 {
+    margin: 50px auto;
+}
+
+#contact button {
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+}
+
+/***************************************************************
+PAGE CGV (#cgv)
+***************************************************************/
+
+#cgv h2{
+    margin: 80px auto;
+}
+
+#cgv h3{
+    margin: 50px auto 30px auto;
+}
+
+/***************************************************************
+PAGE MENTIONS LEGALES (#mentions)
+***************************************************************/
+
+#mentions{
+    text-align: center;
+    margin: 60px auto;
+}
+
+/***************************************************************
+FOOTER
+***************************************************************/
+footer {
+    /* display: inline-block; */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 20px 0;
+    background: #CF1717;
+}
+
+/*************************************************************** 
+MEDIA QUERIES 
+***************************************************************/
+
+/* tablettes */
+@media (min-width: 576px) {
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    body {
+        font-size: 1.2em;
+    }
+
+    /* Shop */
+    #show_products .card-body {
+        height: 520px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+/* pc */
+@media (min-width: 992px) {
+
+
+    /* Header */
+    header {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    nav {
+        padding: 20px 60px !important;
+    }
+
+    /* Carrousel */
+    #home .carousel-item {
+        height: 75vh;
+    }
+
+    #home .carousel-item img {
+        margin-top: -20%;
+    }
+
+}

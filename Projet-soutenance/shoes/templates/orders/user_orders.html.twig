@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon compte
+{% endblock %}
+
+{% block body %}
+
+    <main id="user_orders" class="container">
+
+        <h2>Historique de commande</h2>
+
+        <table>
+            <thead>
+                <th>Date</th>
+                <th>Articles</th>
+                <th>Prix Total</th>
+            </thead>
+            <tbody>
+                {% for orders in orders %}
+                    <tr>
+                        <td>{{ orders.getDate()|date("d-m-Y")}}</td>
+                        <td>
+                            <ul>
+                                {% for basket in basket %}
+                                    <li>{{basket}}</li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </main>
+{% endblock %}

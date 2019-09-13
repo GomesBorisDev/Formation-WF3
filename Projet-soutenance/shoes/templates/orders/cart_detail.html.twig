@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <main id="cart_details">
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Marque</th>
+                        <th>Modèle</th>
+                        <th>SKU</th>
+                        <th>Taille</th>
+                        <th>Price</th>
+                        <th>key</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for cart_item in cart_items %}
+                        <tr>
+                            <td>{{ cart_item.brand }}</td>
+                            <td>{{ cart_item.model }}</td>
+                            <td>{{ cart_item.sku }}</td>
+                            <td>{{ cart_item.shoe_size }}</td>
+                            <td>{{ cart_item.price }}
+                                €</td>
+                            <td></td>
+
+                            <td>
+                                <a class="btn btn-secondary" href="">
+                                    Détails
+                                </a>
+                            </td>
+
+                            <td>
+                                <a href="" onclick="return confirm('Etes vous sur de vouloir supprimer cet article?')" class="btn btn-danger">Supprimer</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>Prix total</td>
+                        <td>
+                            €
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+            <a href="{{ path ('clean_cart') }}" onclick="return confirm('Etes vous sur de vouloir vider le panier?')" class="btn btn-danger">Vider le panier</a>
+            <a href="" onclick="return confirm('Etes vous sur de vouloir valider la commande?')" class="btn btn-primary">Valider la commande</a>
+
+        </div>
+    </main>
+
+{% endblock %}

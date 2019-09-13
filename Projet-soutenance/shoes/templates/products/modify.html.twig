@@ -1,0 +1,137 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <main id="delete_product">
+
+
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Marque</th>
+                        <th>SKU</th>
+                        <th>Modèle</th>
+                        <th>Couleurs</th>
+                        <th>Taille</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in products %}
+                        <tr>
+                            <td>{{ brandsList[product.getBrand()] }}</td>
+                            <td>{{ product.getSku() }}</td>
+                            <td>{{ product.getModel()|slice(0,15) ~ '...'  }}</td>
+                            <td>{{ product.getColor() }}</td>
+                            <td>{{ sizesList[product.getShoeSize()] }}</td>
+                            <td>
+                                <a class="btn btn-secondary" href="{{path('view_details',{id:product.getId()})}}">
+                                    Détails
+                                </a>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-primary open-modal-edit" data-id="{{ product.getId() }}">
+                                    Modifier
+                                </button>
+                            </td>
+                            <td>
+                                <a href="{{ path ('delete_products',{id : product.getId()}) }}" onclick="return confirm('Etes vous sur de vouloir supprimer?')" class="btn btn-danger">Supprimer</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">          
+                    <h5 class="modal-title">Editer :</h5>            
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="brand">Marque</label>
+                            <select name="brand" id="brand" class="form-control">
+                                <option selected>-- Sélectionnez une marque --</option>
+                                {% for key, product in products %}
+                                <option value="{{key}}" {% if products == key %} {%endif%}>{{key}}</option>
+                                {% endfor %};
+                            </select>
+                        </div>                        
+                        <div class="form-group">
+                            <label for="model">Model</label>
+                            <input type="text" class="form-control" id="model" name="model">
+                        </div>                         
+                        <div class="form-group">
+                            <label for="sku">Sku</label>
+                            <input type="text" class="form-control" id="sku" name="sku">
+                        </div> 
+                        <div class="form-group">
+                            <label for="size">Pointure</label>
+                            <select name="size" id="size" class="form-control">
+                                <option selected>-- Sélectionnez une taille --</option>
+                                {% for key, size in sizesList %}
+                                    <option value="{{size}}" {% if sizesList == key %} {%endif%}>{{size}}</option>
+                                {% endfor %};
+                            </select>
+                        </div>                         
+                        <div class="form-group">
+                            <label for="color">Couleurs</label>
+                            <select name="color" id="color" class="form-control">
+                                <option selected>-- Sélectionnez la couleur --</option>
+                                {% for key, color in colors %}
+                                    <option value="{{key}}" {% if colors == key %} {%endif%} style="{{ color }}">{{key}}</option>
+                                {% endfor %};
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="price">Prix</label>
+                            <input type="text" class="form-control" id="price" name="price">
+                        </div>                                               
+                        <button type="submit" class="btn btn-primary">Valider</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+<script>
+$('.open-modal-edit').click(function(e){
+    e.preventDefault();
+    $('#edit').modal('show');
+    var editId = $(this).data('id');
+
+    $.post('{{ path ('edit_products_ajax') }}', {id: editId}, function(retourJSON){
+
+        $('#edit form').find('[name="brand"]').val(retourJSON.brand);
+        $('#edit form').find('[name="model"]').val(retourJSON.model);
+        $('#edit form').find('[name="sku"]').val(retourJSON.sku);
+        $('#edit form').find('[name="size"]').val(retourJSON.size);
+        $('#edit form').find('[name="color"]').val(retourJSON.color);
+        $('#edit form').find('[name="price"]').val(retourJSON.price);
+
+
+    });
+
+});
+
+
+
+</script>
+
+
+{% endblock %}

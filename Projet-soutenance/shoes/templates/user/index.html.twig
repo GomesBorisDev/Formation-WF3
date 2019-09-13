@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon compte
+{% endblock %}
+
+{% block body %}
+
+    <main id="user_home" class="container">
+
+        <h2>Bonjour
+            {{ user.getFirstName() }} !</h2>
+
+
+    </main>
+{% endblock %}

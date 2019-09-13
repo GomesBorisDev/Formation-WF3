@@ -1,0 +1,120 @@
+#***************************************************************
+#**** DIVERS ****
+#***************************************************************
+
+homepage:
+  path: /
+  controller: App\Controller\DefaultController::index
+
+mentions:
+  path: /mentions
+  controller: App\Controller\DefaultController::mentions
+
+cgv:
+  path: /cgv
+  controller: App\Controller\DefaultController::cgv
+
+basket:
+  path: /orders/index
+  controller: App\Controller\OrdersController::basket 
+
+contact:
+  path: /contact
+  controller: App\Controller\ContactController::contactUs
+
+#***************************************************************
+#**** UTILISATEUR ****
+#***************************************************************
+
+app_register:
+  path: /register
+  controller: App\Controller\UserController::addUser
+
+app_login:
+  path: /login
+  controller: App\Controller\SecurityController::login
+
+user_session:
+  path: profile/session
+  controller: App\Controller\UserController::index
+
+user_orders:
+  path: /profile/user-orders
+  controller: App\Controller\OrdersController::userOrders
+
+app_logout:
+  path: /logout
+  controller: App\Controller\DefaultController::index
+
+#**** MOT DE PASSE OUBLIER ****
+
+app_forgotten_password:
+  path: /forgotten-password
+  controller: App\Controller\SecurityController::forgottenPassword
+
+app_reset_password:
+  path: /reset-password/{token}
+  controller: App\Controller\SecurityController::resetPassword
+
+
+#*
+#*
+#**** ADMIN ****
+#*
+#*
+
+add_product:
+  path: /admin/add-product
+  controller: App\Controller\ProductsController::addProducts
+
+modify_product:
+  path: /admin/modify-product
+  controller: App\Controller\ProductsController::modifyProducts
+
+delete_products:
+  path: /admin/delete-product/{id}
+  controller: App\Controller\ProductsController::getProductsDeleteAction
+  requirements:
+      id: '\d+'
+
+admin_orders:
+  path: /admin/admin-orders
+  controller: App\Controller\OrdersController::adminOrders
+#*
+#*
+#**** PRODUITS ****
+#*
+#*
+
+show_products:
+  path: /products/shop-index
+  controller: App\Controller\ProductsController::showProducts
+
+view_details:
+  path: /products/view-details-shoes/{id}
+  controller: App\Controller\ProductsController::viewDetails
+  requirements:
+    id: '\d+'
+
+search_products:
+  path: /products/search-products
+  controller: App\Controller\ProductsController::searchProducts
+
+cart_details:
+  path: /products/cart-details
+  controller: App\Controller\ProductsController::addToCart
+
+# delete_cart_product:
+# path: /products/delete-cart-product/{id}
+# controller: App\Controller\ProductsController::deleteCartProduct
+
+clean_cart:
+  path: /products/clean-cart
+  controller: App\Controller\ProductsController::cleanCart
+
+
+
+edit_products_ajax:
+  path: /ajax/edit-product
+  controller: App\Controller\ProductsController::ajaxEdit
+
